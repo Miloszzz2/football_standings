@@ -3,10 +3,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
 function MainPage() {
   const [leagues, setLeagues] = useState();
-
   const getData = async () => {
     await axios
       .get('https://api-football-standings.azharimm.dev/leagues')
@@ -44,7 +42,7 @@ function MainPage() {
       },
     },
   };
-  console.log(leagues);
+
   return (
     <div className='mainpage'>
       {leagues && (

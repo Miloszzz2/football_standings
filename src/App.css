@@ -1,6 +1,7 @@
 * {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  color: white;
 }
 
 .mainpage {
@@ -8,12 +9,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   height: 100vh;
 }
 .mainpage h1 {
   font-size: 60px;
-  margin: 20px;
+  margin: 30px;
 }
 .mainpage img {
   height: 150px;
@@ -30,4 +30,45 @@
 }
 .mainpage .league :hover {
   opacity: 0.6;
+}
+
+.laligastandings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.laligastandings h1 {
+  font-size: 36px;
+}
+.laligastandings .team_info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.laligastandings td {
+  padding: 8px 15px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.laligastandings table {
+  border-collapse: collapse;
+}
+.laligastandings tr {
+  border-bottom: 1px solid white;
+}
+.laligastandings img {
+  height: 30px;
+}
+.laligastandings .position_color {
+  border-radius: 8px;
+}
+.laligastandings span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  color: black;
 }/*# sourceMappingURL=App.css.map */
