@@ -1,21 +1,27 @@
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 function LaLiga() {
   const [league, setLeague] = useState();
   const [standings, setStandings] = useState();
-
+  const { name } = useParams();
+  const navigate = useNavigate();
+  const availableLeagues = ['fra.1', 'ger.1', 'ita.1', 'esp.1', 'eng.1'];
   const getData = async () => {
-    await axios
-      .get(
-        'https://api-football-standings.azharimm.dev/leagues/esp.1/standings?season=2022&sort=asc'
-      )
-      .then((response) => {
-        setLeague(response.data.data);
-        setStandings(response.data.data.standings);
-      });
+    if (availableLeagues.includes(name)) {
+      await axios
+        .get(
+          `https://api-football-standings.azharimm.dev/leagues/${name}/standings?season=2022&sort=asc`
+        )
+        .then((response) => {
+          setLeague(response.data.data);
+          setStandings(response.data.data.standings);
+        });
+    } else navigate('/');
   };
   useEffect(() => {
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   console.log(standings);
   return (
@@ -60,7 +66,7 @@ function LaLiga() {
                     <td className='goals_stats'>
                       {item.stats[4].value}:{item.stats[3].value}
                     </td>
-                    <td>{item.stats[1].value}</td>
+                    <td>{item.stats[2].value}</td>
                   </tr>
                 );
               })}

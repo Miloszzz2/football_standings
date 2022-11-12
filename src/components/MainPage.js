@@ -42,7 +42,7 @@ function MainPage() {
       },
     },
   };
-
+  console.log(leagues);
   return (
     <div className='mainpage'>
       {leagues && (
@@ -68,7 +68,7 @@ function MainPage() {
                     variants={item}
                     key={data.name}
                   >
-                    <Link to={data.slug}>
+                    <Link to={`/league/${data.id}`}>
                       <img src={data.logos.dark} alt='' />
                     </Link>
                   </motion.div>
