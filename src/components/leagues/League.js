@@ -39,8 +39,9 @@ function LaLiga() {
                 <th>M</th>
                 <th>W</th>
                 <th>R</th>
-                <th>B</th>
                 <th>P</th>
+                <th>B</th>
+                <th>Pkt</th>
               </tr>
             </thead>
             <tbody>
@@ -63,6 +64,7 @@ function LaLiga() {
                     <td>{item.stats[0].value}</td>
                     <td>{item.stats[6].value}</td>
                     <td>{item.stats[5].value}</td>
+                    <td>{item.stats[1].value}</td>
                     <td className='goals_stats'>
                       {item.stats[4].value}:{item.stats[3].value}
                     </td>
