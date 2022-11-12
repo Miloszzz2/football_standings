@@ -7,7 +7,6 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import { createContext, useState } from 'react';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -17,7 +16,6 @@ const router = createBrowserRouter(
     </Route>
   )
 );
-export const LeagueContext = createContext();
 function App() {
   return <RouterProvider router={router} />;
 }
