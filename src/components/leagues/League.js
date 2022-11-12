@@ -23,13 +23,13 @@ function LaLiga() {
     getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(standings);
+  console.log(league);
   return (
     <div className='laligastandings'>
       {standings && league && (
         <>
           <h1>
-            {league.abbreviation} {league.seasonDisplay}
+            {league.name} {league.seasonDisplay}
           </h1>
           <table>
             <thead>
