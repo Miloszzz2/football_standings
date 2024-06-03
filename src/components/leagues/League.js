@@ -11,7 +11,7 @@ function LaLiga() {
     if (availableLeagues.includes(name)) {
       await axios
         .get(
-          `https://api-football-standings.azharimm.dev/leagues/${name}/standings?season=2022&sort=asc`
+          `https://api-football-standings.azharimm.dev/leagues/${name}/standings?season=2023&sort=asc`
         )
         .then((response) => {
           setLeague(response.data.data);
@@ -36,12 +36,12 @@ function LaLiga() {
               <tr>
                 <td>#</td>
                 <td style={{ textAlign: 'left' }}>Drużyna</td>
-                <th>M</th>
+                <th>MP</th>
                 <th>W</th>
-                <th>R</th>
-                <th>P</th>
-                <th>B</th>
-                <th>Pkt</th>
+                <th>D</th>
+                <th>L</th>
+                <th>GF/GA</th>
+                <th>Pts</th>
               </tr>
             </thead>
             <tbody>
@@ -62,13 +62,13 @@ function LaLiga() {
                       {item.team.name}
                     </td>
                     <td>{item.stats[0].value}</td>
+                    <td>{item.stats[7].value}</td>
                     <td>{item.stats[6].value}</td>
-                    <td>{item.stats[5].value}</td>
                     <td>{item.stats[1].value}</td>
                     <td className='goals_stats'>
-                      {item.stats[4].value}:{item.stats[3].value}
+                      {item.stats[5].value}:{item.stats[4].value}
                     </td>
-                    <td>{item.stats[2].value}</td>
+                    <td>{item.stats[3].value}</td>
                   </tr>
                 );
               })}
